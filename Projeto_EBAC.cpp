@@ -1,11 +1,11 @@
-#include <stdio.h> //biblioteca padr„o
-#include <stdlib.h> //biblioteca que usa de alocaÁ„o de espaÁo em memÛria
-#include <locale.h> //biblioteca de alocaÁ„o de tete por regi„o
+#include <stdio.h> //biblioteca padr√£o
+#include <stdlib.h> //biblioteca que usa de aloca√ß√£o de espa√ßo em mem√≥ria
+#include <locale.h> //biblioteca de aloca√ß√£o de tete por regi√£o
 #include <string.h> //biblioteca de string
 
 int registro()
 {
-	//iniciando vari·veis e tamanho
+	//iniciando vari√°veis e tamanho
 	char arquivo[40];
 	char cpf[40]; 
 	char nome[40];
@@ -22,7 +22,7 @@ int registro()
 	FILE *file; //chamando file nas bibliotecas
 	file = fopen(arquivo, "w"); //abertura de arquivo e escrever "w" ==> criar arquivo
 	fprintf(file,cpf);//print do arquivo e cpf ==> salvar
-	fclose(file); //fechar a funÁ„o de arquivo
+	fclose(file); //fechar a fun√ß√£o de arquivo
 	
 	file = fopen(arquivo,"a"); //"a" atualiza os dados sem criar novo arquivo
 	fprintf(file,","); // salvar nome dentro do arquivo
@@ -69,12 +69,12 @@ int consulta()
 	
 	if (file ==NULL)
 	{
-		printf("n„o localizado!\n");
+		printf("n√£o localizado!\n");
 	}
 	
-	while(fgets(conteudo,200,file) != NULL) //LaÁo para rodar atÈ condiÁ„o de falso
+	while(fgets(conteudo,200,file) != NULL) //La√ßo para rodar at√© condi√ß√£o de falso
 	{
-		printf("Essas s„o as informaÁıes do usu·rio: \n");
+		printf("Essas s√£o as informa√ß√µes do usu√°rio: \n");
 		printf("%s",conteudo);
 		printf("\n\n");
 	}
@@ -96,7 +96,7 @@ int deletar()
 	{
 		
 		fclose(file);
-		printf("n„o localizado!\n");
+		printf("n√£o localizado!\n");
 		system("pause");
 	}
 	
@@ -113,18 +113,18 @@ int main()
 	for (x=1;x=1;)
 	{
 	
-		system("cls"); //Limpar tela dos itens j· escritos
+		system("cls"); //Limpar tela dos itens j√° escritos
 		
 		
 			
 		setlocale (LC_ALL,"Portuguese"); //Definir o idioma
 		
-		printf("###CartÛrio###\n\n");
-		printf("Escolher opÁ„o desejada: \n");
+		printf("###Cart√≥rio###\n\n");
+		printf("Escolher op√ß√£o desejada: \n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar os nomes\n");
-		printf("OpÁ„o: \n");
+		printf("Op√ß√£o: \n");
 		scanf("%d", &opcao); // atribuir novo valor ao int opcao
 		
 		switch(opcao){
@@ -140,13 +140,13 @@ int main()
 			deletar();
 			break;
 			
-			default: //vai pra saÌda padr„o se tem erro digitacao
+			default: //vai pra sa√≠da padr√£o se tem erro digitacao
 			printf("Digitou errado\n");
 			system("pause");
 			break;
 		}
 	}
-	printf("\nEsse software È de livre uso pessoal\n");
+	printf("\nEsse software √© de livre uso pessoal\n");
 }
 
 
