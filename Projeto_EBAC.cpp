@@ -1,11 +1,11 @@
-#include <stdio.h> //biblioteca padrão
-#include <stdlib.h> //biblioteca que usa de alocação de espaço em memória
-#include <locale.h> //biblioteca de alocação de tete por região
+#include <stdio.h> //biblioteca padr�o
+#include <stdlib.h> //biblioteca que usa de aloca��o de espa�o em mem�ria
+#include <locale.h> //biblioteca de aloca��o de tete por regi�o
 #include <string.h> //biblioteca de string
 
 int registro()
 {
-	//iniciando variáveis e tamanho
+	//iniciando vari�veis e tamanho
 	char arquivo[40];
 	char cpf[40]; 
 	char nome[40];
@@ -22,7 +22,7 @@ int registro()
 	FILE *file; //chamando file nas bibliotecas
 	file = fopen(arquivo, "w"); //abertura de arquivo e escrever "w" ==> criar arquivo
 	fprintf(file,cpf);//print do arquivo e cpf ==> salvar
-	fclose(file); //fechar a função de arquivo
+	fclose(file); //fechar a fun��o de arquivo
 	
 	file = fopen(arquivo,"a"); //"a" atualiza os dados sem criar novo arquivo
 	fprintf(file,","); // salvar nome dentro do arquivo
@@ -69,12 +69,12 @@ int consulta()
 	
 	if (file ==NULL)
 	{
-		printf("não localizado!\n");
+		printf("n�o localizado!\n");
 	}
 	
-	while(fgets(conteudo,200,file) != NULL) //Laço para rodar até condição de falso
+	while(fgets(conteudo,200,file) != NULL) //La�o para rodar at� condi��o de falso
 	{
-		printf("Essas são as informações do usuário: \n");
+		printf("Essas s�o as informa��es do usu�rio: \n");
 		printf("%s",conteudo);
 		printf("\n\n");
 	}
@@ -96,7 +96,7 @@ int deletar()
 	{
 		
 		fclose(file);
-		printf("não localizado!\n");
+		printf("n�o localizado!\n");
 		system("pause");
 	}
 	
@@ -113,18 +113,19 @@ int main()
 	for (x=1;x=1;)
 	{
 	
-		system("cls"); //Limpar tela dos itens já escritos
+		system("cls"); //Limpar tela dos itens j� escritos
 		
 		
 			
 		setlocale (LC_ALL,"Portuguese"); //Definir o idioma
 		
-		printf("###Cartório###\n\n");
-		printf("Escolher opção desejada: \n");
+		printf("###Cart�rio###\n\n");
+		printf("Escolher op��o desejada: \n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar os nomes\n");
-		printf("Opção: \n");
+		printf("\t4 - Sair do sistema\n");
+		printf("Op��o: \n");
 		scanf("%d", &opcao); // atribuir novo valor ao int opcao
 		
 		switch(opcao){
@@ -140,13 +141,18 @@ int main()
 			deletar();
 			break;
 			
-			default: //vai pra saída padrão se tem erro digitacao
+			case 4:
+			printf("Obrigado por usar o sistema");
+			return 0;
+			break;
+			
+			default: //vai pra sa�da padr�o se tem erro digitacao
 			printf("Digitou errado\n");
 			system("pause");
 			break;
 		}
 	}
-	printf("\nEsse software é de livre uso pessoal\n");
+	printf("\nEsse software � de livre uso pessoal\n");
 }
 
 
