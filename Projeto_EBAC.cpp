@@ -125,6 +125,7 @@ int main()
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar os nomes\n");
 		printf("\t4 - Sair do sistema\n");
+		printf("\t5 - Retornar\n");
 		printf("Opção: \n");
 		scanf("%d", &opcao); // atribuir novo valor ao int opcao
 		
@@ -144,6 +145,10 @@ int main()
 			case 4:
 			printf("Obrigado por usar o sistema");
 			return 0;
+			break;
+			
+			case 5:
+			printf("Retornar a tela");
 			break;
 			
 			default: //vai pra saï¿½da padrï¿½o se tem erro digitacao
